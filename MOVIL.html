@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jonathan Delgado Centeno | Portafolio de Diseño Gráfico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f8fafc;
+    color:#1f2937;
+    line-height:1.8;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+.skip-link{
+    position:absolute;
+    left:-9999px;
+    top:auto;
+}
+
+.skip-link:focus{
+    left:20px;
+    top:20px;
+    background:#ffffff;
+    color:#0A3D91;
+    padding:10px;
+    border-radius:8px;
+    z-index:9999;
+}
+
+a:focus-visible,
+button:focus-visible{
+    outline:3px solid #2563EB;
+    outline-offset:3px;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#0A3D91;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#1f2937;
+    font-weight:600;
+    position:relative;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#2563EB;
+}
+
+.menu a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#2563EB;
+    transition:.3s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:2rem;
+    cursor:pointer;
+    color:#0A3D91;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:130px 20px 80px;
+    background:linear-gradient(135deg,#0A3D91,#2563EB);
+    color:#ffffff;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:10px 20px;
+    border-radius:50px;
+    margin-bottom:20px;
+    letter-spacing:2px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:1.6rem;
+    margin-bottom:25px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 35px;
+    background:#ffffff;
+    color:#0A3D91;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:#e2e8f0;
+}
+
+/* SECCIONES */
+
+section{
+    padding:100px 20px;
+    scroll-margin-top:90px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:50px;
+    color:#0A3D91;
+    font-size:2.5rem;
+}
+
+.descripcion{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.skills{
+    margin-top:35px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:#0A3D91;
+    color:white;
+    padding:12px 20px;
+    border-radius:30px;
+}
+
+/* PROYECTOS */
+
+#proyectos{
+    background:#eef4ff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.project-image{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#0A3D91;
+    padding:20px 25px 10px;
+}
+
+.card p{
+    padding:0 25px 25px;
+}
+
+/* PERFIL */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.info-box{
+    background:#f4f7fc;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box h3{
+    color:#0A3D91;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0A3D91;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    nav{
+        flex-wrap:wrap;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .menu{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        margin-top:20px;
+        gap:15px;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .hero h2{
+        font-size:1.2rem;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+#contenido
+    Saltar al contenido principal
+</a>
+
+<header>
+
+    <nav aria-label="Navegación principal">
+
+        <div class="logo">
+            Jonathan Delgado
+        </div>
+
+        <button
+            class="menu-toggle"
+            aria-label="Abrir menú"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="menu">
+
+            <li>#inicioInicio</a></li>
+            <li>#sobre-miSobre mí</a></li>
+            <li>#proyectosProyectos</a></li>
+            <li>#perfilPerfil</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main id="contenido">
+
+<section id="inicio" class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            PORTAFOLIO DE DISEÑO GRÁFICO
+        </span>
+
+        <h1>Jonathan Delgado Centeno</h1>
+
+        <h2>Diseñador Gráfico en Formación</h2>
+
+        <p>
+            Tengo 24 años y actualmente estudio la Licenciatura en Diseño
+            Gráfico en la Universidad Latinoamericana. Me apasiona el diseño
+            visual, la identidad de marca y la creación de experiencias
+            gráficas atractivas.
+        </p>
+
+        <a
+            href="mailto:j.delgadocenteno@my.ula.edu.mx"
+            class="btn">
+            Contacto
+        </a>
+
+    </div>
+
+</section>
+
+<section id="sobre-mi">
+
+    <div class="container">
+
+        <h2>Acerca de mí</h2>
+
+        <p class="descripcion">
+            Mi formación en Diseño Gráfico me ha permitido desarrollar
+            habilidades en branding, diseño editorial, publicidad y
+            comunicación visual. Busco transformar ideas en experiencias
+            gráficas funcionales, creativas y alineadas a los objetivos
+            de cada proyecto.
+        </p>
+
+        <div class="skills">
+
+            <div class="skill">Branding</div>
+            <div class="skill">Identidad Visual</div>
+            <div class="skill">Diseño Editorial</div>
+            <div class="skill">Diseño Publicitario</div>
+            <div class="skill">Adobe Illustrator</div>
+            <div class="skill">Adobe Photoshop</div>
+            <div class="skill">Canva</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="proyectos">
+
+    <div class="container">
+
+        <h2>Proyectos Destacados</h2>
+
+        <div class="cards">
+
+            <article class="card">
+
+                <img
+                    src="https://insademexico.mx/wp-content/uploads/2018/11/identidad-corporativa.jpg"
+                    alt="Proyecto de identidad corporativa"
+                    class="project-image">
+
+                <h3>Identidad Corporativa</h3>
+
+                <p>
+                    Desarrollo de sistemas visuales para marcas, incluyendo
+                    logotipos, manuales de identidad visual y aplicaciones
+                    corporativas.
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <img
+                    src="https://www.altonivel.com.mx/wp-content/uploads/2025/01/mejores-campanas-publicitarias.webp"
+                    alt="Proyecto de campaña publicitaria"
+                    class="project-image">
+
+                <h3>Campaña Publicitaria</h3>
+
+                <p>
+                    Diseño de piezas promocionales para redes sociales,
+                    campañas digitales y estrategias visuales enfocadas
+                    en fortalecer la presencia de marca.
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <img
+                    src="https://milods.com/wp-content/uploads/2023/01/3-1024x854.webp"
+                    alt="Proyecto de diseño editorial"
+                    class="project-image">
+
+                <h3>Diseño Editorial</h3>
+
+                <p>
+                    Creación de propuestas editoriales con énfasis en
+                    composición, legibilidad, jerarquía visual y organización
+                    efectiva de información.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="perfil">
+
+    <div class="container">
+
+        <h2>Perfil Profesional</h2>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <h3>Edad</h3>
+                <p>24 años</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Universidad</h3>
+                <p>Universidad Latinoamericana</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Carrera</h3>
+                <p>Licenciatura en Diseño Gráfico</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Experiencia</h3>
+                <p>Conocimientos intermedios en diseño gráfico y comunicación visual.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>
+        © 2026 Jonathan Delgado Centeno · Portafolio de Diseño Gráfico · Universidad Latinoamericana
+    </p>
+
+</footer>
+
+<script>
+
+const menuButton = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+menuButton.addEventListener("click", () => {
+
+    menu.classList.toggle("active");
+
+    const expanded = menuButton.getAttribute("aria-expanded") === "true";
+
+    menuButton.setAttribute("aria-expanded", !expanded);
+
+});
+
+</script>
+
+</body>
+</html>
